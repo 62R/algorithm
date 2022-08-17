@@ -1,12 +1,12 @@
-let arr = []
+let sortarr = []
 
 for (let i = 0; i < 10; i++) {
     newEl = Math.floor(Math.random() * 1000);
-    arr.push(newEl)
+    sortarr.push(newEl)
 }
 
-console.log(arr)
-console.log(sort(arr))
+console.log(sortarr)
+console.log(sort(sortarr))
 
 
 function findMin(arr) {
