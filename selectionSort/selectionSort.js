@@ -1,14 +1,3 @@
-let sortarr = []
-
-for (let i = 0; i < 10; i++) {
-    newEl = Math.floor(Math.random() * 1000);
-    sortarr.push(newEl)
-}
-
-console.log(sortarr)
-console.log(sort(sortarr))
-
-
 function findMin(arr) {
     let min = arr[0];
     let minIndex = 0;
@@ -21,7 +10,12 @@ function findMin(arr) {
     return minIndex;
 }
 
-function sort(arr) {
+/**
+ * Функция выполняет сортировку массива методом сортировки выбором.
+ * @param {Array} arr 
+ * @returns {Array}
+ */
+export default function selectionSort(arr) {
     let newArr = [];
     while (arr.length > 0) {
         let minIndex = findMin(arr);
@@ -29,3 +23,4 @@ function sort(arr) {
     }
     return newArr
 }
+

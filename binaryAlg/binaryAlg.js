@@ -1,30 +1,27 @@
-const list = [];
-const item = 10;
+/**
+ * Функция осуществляет бинарный поиск элемента в сортированном массиве. Возвращяет индекс элемента. Если элемент не найден возвращает null.
+ * @param {Array} arr
+ * @param {Number} item 
+ * @returns Item index in array. 
+ */
+export default function binarySearch(arr, item) {
+    let lowIndex = 0;
+    let highIndex = arr.length - 1;
 
-for (let i = 0; i < 100; i++) {
-    list[i] = i;
-}
-
-console.log(binarySearch(list, item), list[item]);
-
-function binarySearch(list, item) {
-    let low = 0;
-    let high = list.length - 1;
-
-    if (item < 0 | item > high) {
+    if (item < arr[lowIndex] | item > arr[highIndex]) {
         return null
     }
 
-    while (low <= high) {
-        let mid = Math.floor((low + high) / 2);
-        let guess = list[mid];
+    while (lowIndex <= highIndex) {
+        let mid = Math.floor((lowIndex + highIndex) / 2);
+        let guess = arr[mid];
         if (guess === item) {
             return mid
         }
         if (guess > item) {
-            high = mid - 1
+            highIndex = mid - 1
         } else {
-            low = mid + 1
+            lowIndex = mid + 1
         }
     }
 

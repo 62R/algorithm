@@ -1,8 +1,9 @@
-const arrFindMax = [1, 2, 5, 6, 2, 6, 2, 6, 2, 45, 8];
-
-console.log(findMax(arrFindMax));
-
-function findMax(arr) {
+/**
+ * Функция находит наибольшее значение в массиве с использованием рекурсии.
+ * @param {Array} arr 
+ * @returns
+ */
+export default function findMax(arr) {
     if (arr.length > 1) {
         const altMax = findMax(arr.slice(1));
         if (arr[0] > altMax) {
